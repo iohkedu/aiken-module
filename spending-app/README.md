@@ -1,41 +1,35 @@
+# Project Name
 
-# Proyecto Nombre
+This project requires setting up some dependencies before it can run. Follow the steps below to get everything up and running.
 
-Este proyecto requiere configurar algunas dependencias antes de ejecutarse. Sigue los pasos a continuación para poner todo en marcha.
+## Requirements
 
-## Requisitos
+**Blockfrost API Key**:
+You'll need a Blockfrost API key. You can obtain one by creating an account at [Blockfrost.io](https://blockfrost.io/).
 
-**Blockfrost API Key**: Necesitarás una clave API de Blockfrost. Puedes obtenerla creando una cuenta en [Blockfrost.io](https://blockfrost.io/).
+## Setup Steps
 
-## Pasos para la configuración
+1. **Configure the .env.local file**:
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_DIRECTORIO>
-   ```
+   Create a `.env.local` file in the `spending-app` directory and add the following variable:
+```
+NEXT_PUBLIC_BLOCKFROST_API_KEY=YOUR_BLOCKFROST_API_KEY
+```
 
-2. **Configurar el archivo `.env.local`**:
-   Crea un archivo `.env.local` en la raíz del proyecto y añade la siguiente variable:
+   Make sure to replace `YOUR_BLOCKFROST_API_KEY` with the real key you obtained from Blockfrost.
 
-   ```env
-   BLOCKFROST_API_KEY=TU_API_KEY_DE_BLOCKFROST
-   ```
+2. **Install dependencies**:
 
-   Asegúrate de reemplazar `TU_API_KEY_DE_BLOCKFROST` con la clave real que obtuviste de Blockfrost.
+``` bash
+npm install
+```
 
-3. **Instalar dependencias**:
-   Ejecuta el siguiente comando para instalar todas las dependencias necesarias:
-   ```bash
-   npm install
-   ```
+3. **Start the server**:
 
-4. **Iniciar el servidor**:
-   Una vez que las dependencias estén instaladas, inicia el servidor de desarrollo con:
-   ```bash
-   npm run dev
-   ```
+``` bash
+npm run dev
+```
 
-## Uso
+## Usage
 
-Después de iniciar el servidor, accede al proyecto desde tu navegador en la URL que se muestra en la terminal, generalmente `http://localhost:3000`.
+Once the server is running, open your browser and go to http://localhost:3000.
