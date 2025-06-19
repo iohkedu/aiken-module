@@ -56,12 +56,12 @@ const Customized = ({
       setAda(numAda.toString());
 
       if (dat && parseInt(dat, 10) < 2) {
-        setError("El número debe ser mayor a 2");
+        setError("The ADA amount has to be greater than 2");
       } else {
         setError("");
       }
     } else {
-      setError("Tiene que ser una cantidad en ADA");
+      setError("You have to select an amount in ADA");
     }
   };
 
@@ -72,7 +72,7 @@ const Customized = ({
     setDatum(dat);
   };
 
-  const desbloquearDesdeScript = async (txHash: string, index: number) => {
+  const unlock = async (txHash: string, index: number) => {
     setMessage("Enviando transacción");
     setMessageType("warning");
     if (redeemer != "") {
@@ -86,7 +86,7 @@ const Customized = ({
           red,
         );
         if (!resultTxHash.includes("error")) {
-          setMessage("Transacción enviada: " + resultTxHash);
+          setMessage("Transaction sent: " + resultTxHash);
           setMessageType("success");
         } else {
           setMessage(resultTxHash);
@@ -101,7 +101,7 @@ const Customized = ({
           redeemer,
         );
         if (!resultTxHash.includes("error")) {
-          setMessage("Transacción enviada: " + resultTxHash);
+          setMessage("Transaction sent: " + resultTxHash);
           setMessageType("success");
         } else {
           setMessage(resultTxHash);
@@ -109,13 +109,13 @@ const Customized = ({
         }
       }
     } else {
-      setMessage("Escribe un redeemer");
+      setMessage("Write a Redeemer");
       setMessageType("error");
     }
   };
 
-  const bloquear = async () => {
-    setMessage("Enviando transacción");
+  const lock = async () => {
+    setMessage("Sending Transaction");
     setMessageType("warning");
     if (ada !== "" && error === "" && datum !== "") {
       try {
@@ -128,7 +128,7 @@ const Customized = ({
             parsed,
           );
           if (!resultTxHash.includes("error")) {
-            setMessage("Transacción enviada: " + resultTxHash);
+            setMessage("Transaction sent: " + resultTxHash);
             setMessageType("success");
           } else {
             setMessage(resultTxHash);
@@ -174,7 +174,7 @@ const Customized = ({
     if (cbor != "") {
       obtenerAddress(cbor);
     } else {
-      setMessage("Pega el código de CBOR");
+      setMessage("Paste the CBOR code");
       setMessageType("error");
     }
   };
@@ -206,7 +206,7 @@ const Customized = ({
           <p className="text-sm font-bold text-center text-white mb-2">
             {scriptAddress !== ""
               ? scriptAddress
-              : "Escribe el código abajo para poder obtener la address"}
+              : "Write the code below to get the address"}
           </p>
           <div className="flex flex-col space-y-2">
             <textarea
@@ -244,7 +244,7 @@ const Customized = ({
           <div className="flex flex-col w-1/2 p-4 space-y-4">
             <div className="bg-[#1f1f1f] shadow-md border border-white rounded-lg p-4">
               <p className="text-sm font-bold text-center text-white mb-2">
-                Bloquear ADAs
+                Lock ADAs
               </p>
               <div className="flex flex-col space-y-6">
                 <input
@@ -264,9 +264,9 @@ const Customized = ({
                 <button
                   disabled={!connected}
                   className="bg-[#c80e22] text-white font-semibold py-1 px-3 rounded hover:bg-black disabled:bg-gray-400 disabled:cursor-not-allowed"
-                  onClick={bloquear}
+                  onClick={lock}
                 >
-                  Bloquear ADAs
+                  Lock ADAs
                 </button>
               </div>
             </div>
@@ -282,7 +282,7 @@ const Customized = ({
               className="bg-[#c80e22] text-white font-semibold py-1 px-3 rounded hover:bg-black disabled:bg-gray-400 disabled:cursor-not-allowed"
               onClick={reload}
             >
-              Recargar
+              Reload
             </button>
             <div className="list space-y-2 mt-4">
               {scriptUTxOs.map((item) => (
@@ -290,10 +290,7 @@ const Customized = ({
                   key={item.input.txHash + "#" + item.input.outputIndex}
                   className="list-item bg-white text-black rounded-lg p-2 text-center"
                   onClick={() =>
-                    desbloquearDesdeScript(
-                      item.input.txHash,
-                      item.input.outputIndex,
-                    )
+                    unlock(item.input.txHash, item.input.outputIndex)
                   }
                   disabled={!connected}
                 >

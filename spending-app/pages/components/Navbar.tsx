@@ -3,11 +3,11 @@ import { PubKeyHash } from "./Label";
 import { SetMessageFn, SetMessageTypeFn } from "../index";
 
 type NavbarProps = {
-  setMensaje: SetMessageFn;
-  setMensajeType: SetMessageTypeFn;
+  setMessage: SetMessageFn;
+  setMessageType: SetMessageTypeFn;
 };
 
-export const Navbar = ({ setMensaje, setMensajeType }: NavbarProps) => {
+export const Navbar = ({ setMessage, setMessageType }: NavbarProps) => {
   return (
     <nav className="bg-customBackground p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -17,7 +17,7 @@ export const Navbar = ({ setMensaje, setMensajeType }: NavbarProps) => {
           </span>
         </div>
         <div className="relative group inline-block overflow-visible">
-          <PubKeyHash setMessage={setMensaje} setMessageType={setMensajeType} />
+          <PubKeyHash setMessage={setMessage} setMessageType={setMessageType} />
           <span
             className="pointer-events-none absolute -top-6 left-1/2 transform -translate-x-1/2
              opacity-0 group-hover:opacity-100 text-xs text-white bg-black bg-opacity-60
