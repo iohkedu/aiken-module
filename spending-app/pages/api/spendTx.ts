@@ -37,7 +37,7 @@ export async function sendToScript(
     return txHash;
   }
 
-  return "error: no se pudo enviar la transacción";
+  return "error: your transaction was not sent.";
 }
 
 export async function unlockFromScript(
@@ -57,7 +57,7 @@ export async function unlockFromScript(
   const ownUtxo = await wallet.getUtxos();
   const collaterals = await wallet.getCollateral();
   if (collaterals.length == 0) {
-    return "error: define el colateral en tu billetera";
+    return "error: set the collateral in your wallet.";
   }
 
   const num: number = Number(redeemer);
@@ -91,7 +91,7 @@ export async function unlockFromScript(
       const newTxHash = await wallet.submitTx(await txFirmada);
       return newTxHash;
     } catch {
-      return "error al enviar la transacción";
+      return "error sending the transaction";
     }
   } else {
     const tx = await new Transaction({
@@ -120,7 +120,7 @@ export async function unlockFromScript(
       const newTxHash = await wallet.submitTx(await txFirmada);
       return newTxHash;
     } catch (error) {
-      return "error al enviar la transacción";
+      return "error sending the transaction";
     }
   }
 }

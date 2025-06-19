@@ -10,16 +10,16 @@ export type SetMessageTypeFn = (
 ) => void;
 
 const Home: NextPage = () => {
-  const [mensaje, setMensaje] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
   const [mensajeType, setMensajeType] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen w-full bg-gray-100 flex flex-col">
-      <Navbar setMensaje={setMensaje} setMensajeType={setMensajeType} />
+      <Navbar setMensaje={setMessage} setMensajeType={setMensajeType} />
       <Spend
-        message={mensaje}
+        message={message}
         messageType={mensajeType}
-        setMessage={setMensaje}
+        setMessage={setMessage}
         setMessageType={setMensajeType}
       />
     </div>

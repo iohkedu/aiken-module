@@ -53,7 +53,7 @@ export function parseData(input: any): Data {
     };
   }
 
-  throw new Error(`Tipo no soportado en parseData: ${JSON.stringify(input)}`);
+  throw new Error(`This type is not supported: ${JSON.stringify(input)}`);
 }
 
 export const txBuilder = new MeshTxBuilder({

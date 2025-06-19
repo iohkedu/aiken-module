@@ -24,11 +24,11 @@ export const PubKeyHash = ({ setMessage, setMessageType }: PubKeyHashProps) => {
     navigator.clipboard
       .writeText(pubKeyHash)
       .then(() => {
-        setMessage("Tu llave pública ha sido copiada");
+        setMessage("Your Public Key Hash is in your clipboard!");
         setMessageType("success");
       })
       .catch((err) => {
-        setMessage("Error copiando al portapapeles: " + err);
+        setMessage("Error : " + err);
         setMessageType("error");
       });
   }, [pubKeyHash]);
