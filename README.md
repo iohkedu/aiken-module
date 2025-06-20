@@ -13,7 +13,7 @@ This repository contains the lessons, examples, exercises, and installation guid
 
 The most relevant directories in this repository are structured as follows:
 
-- [installation](install/) You can find the installation instructions to set up your development environment and start writing smart contracts.
+- [installation](installation/) You can find the installation instructions to set up your development environment and start writing smart contracts.
 - [examples](examples/)  You can find the code exactly as we showed it during the workshop. 
 
 
