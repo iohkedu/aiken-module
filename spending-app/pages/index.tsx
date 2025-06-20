@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="min-h-screen w-full bg-gray-100 flex flex-col">
-      <Navbar setMensaje={setMessage} setMensajeType={setMensajeType} />
+      <Navbar setMessage={setMessage} setMessageType={setMensajeType} />
       <Spend
         message={message}
         messageType={mensajeType}

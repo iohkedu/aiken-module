@@ -1,11 +1,11 @@
-# Project Name
+# Spending App
 
 This project requires setting up some dependencies before it can run. Follow the steps below to get everything up and running.
 
 ## Requirements
 
 **Blockfrost API Key**:
-You'll need a Blockfrost API key. You can obtain one by creating an account at [Blockfrost.io](https://blockfrost.io/).
+You'll need a Blockfrost API key. You can obtain one by creating an account at [Blockfrost.io](https://blockfrost.io/). For this tool you need to get a Preprod API Key.
 
 ## Setup Steps
 

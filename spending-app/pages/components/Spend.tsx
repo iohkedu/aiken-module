@@ -73,7 +73,7 @@ const Customized = ({
   };
 
   const unlock = async (txHash: string, index: number) => {
-    setMessage("Enviando transacción");
+    setMessage("Sending transaction");
     setMessageType("warning");
     if (redeemer != "") {
       if (redeemer.includes("{")) {
@@ -142,7 +142,7 @@ const Customized = ({
             datum,
           );
           if (!resultTxHash.includes("error")) {
-            setMessage("Transacción enviada: " + resultTxHash);
+            setMessage("Transaction sent: " + resultTxHash);
             setMessageType("success");
           } else {
             setMessage(resultTxHash);
@@ -150,14 +150,11 @@ const Customized = ({
           }
         }
       } catch (err) {
-        setMessage(
-          "Error en los datos. Asegúrate de que el datum sea válido para el tipo seleccionado: " +
-            err,
-        );
+        setMessage("Select a valid Datum: " + err);
         setMessageType("error");
       }
     } else {
-      setMessage("Error en los datos ADA y/o Datum");
+      setMessage("Error in Datum or Redeemer");
       setMessageType("error");
     }
   };
@@ -211,7 +208,7 @@ const Customized = ({
           <div className="flex flex-col space-y-2">
             <textarea
               className="w-full bg-[#2c2c2c] text-white p-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#c80e22] focus:border-transparent"
-              placeholder="Escribe aquí..."
+              placeholder="Write the CBOR here"
               onPaste={setCborFromTextarea}
               style={{ minHeight: "10px" }}
             />
@@ -275,8 +272,8 @@ const Customized = ({
           <div className="bg-[#1f1f1f] shadow-md border border-white rounded-lg p-4 w-1/2">
             <p className="text-sm font-bold text-center text-white mb-4">
               {scriptAddress !== ""
-                ? "UTxOs en " + scriptAddress
-                : "Actualiza o pega el cbor para ver los UTxOs"}
+                ? "UTxOs in " + scriptAddress
+                : "Update or paste the CBOR to see the address"}
             </p>
             <button
               className="bg-[#c80e22] text-white font-semibold py-1 px-3 rounded hover:bg-black disabled:bg-gray-400 disabled:cursor-not-allowed"
