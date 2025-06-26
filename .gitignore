@@ -1,0 +1,44 @@
+# Emacs backup and temporary files
+*~
+\#*\#
+.\#*
+*.swp
+*.swo
+*.elc
+auto-save-list/
+tramp
+.emacs.desktop
+.emacs.desktop.lock
+ido.last
+abbrev_defs
+recentf
+bookmarks
+
+# Node.js (aplica a cualquier nivel del proyecto)
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.pnpm-debug.log*
+
+# ReactJS / NextJS builds (en cualquier subcarpeta)
+**/.next/
+**/out/
+**/build/
+**/.cache/
+**/*.log
+
+# TypeScript
+**/*.tsbuildinfo
+**/dist/
+**/lib/
+**/build/
+
+# Environment files (en cualquier subcarpeta)
+**/.env
+**/.env.*
+**/.env.local
+
+# Archivos de aiken
+**/build
+**/plutus.json
