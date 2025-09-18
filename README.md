@@ -10,7 +10,7 @@ The primary goal of this module is to equip you with the practical experience to
 Each section below corresponds to a specific example within this module, illustrating different aspects of Aiken smart contract development.
 
 
-### 1. Installation
+### [1. Installation](https://github.com/iohkedu/cardano-developer-course-online/blob/main/01-async-lessons/00-welcome/02-course-tools.md)
 This section guides you through the process of setting up your development environment to work with Aiken. It covers the necessary tools and steps to get Aiken installed and ready for use on your system.
 #### **Key Learning Points:**
 * Prerequisites for Aiken development.
@@ -18,7 +18,7 @@ This section guides you through the process of setting up your development envir
 * Verifying your installation.
 
 
-### 2. Always True
+### [2. Always True](https://github.com/iohkedu/aiken-module/tree/main/examples/always-true)
 The "Always True" contract is a foundational example that demonstrates the simplest possible valid smart contract in Aiken. It's often used as a "hello world" for contract validation, where the script always succeeds, regardless of input.
 #### **Key Learning Points:**
 * Basic Aiken contract structure.
@@ -34,7 +34,7 @@ This example builds upon the basic structure to introduce simple data handling o
 * Basic conditional logic within a contract.
 
 
-### 4. Signature
+### [4. Signature](https://github.com/iohkedu/aiken-module/tree/main/examples/signature)
 The "Signature" example explores a key aspect of smart contract security: verifying digital signatures. This contract will demonstrate how to ensure that a specific public key authorizes a transaction.
 #### **Key Learning Points:**
 * Working with public keys and signatures in Aiken.
@@ -42,7 +42,7 @@ The "Signature" example explores a key aspect of smart contract security: verify
 * Implementing basic access control.
 
 
-### 5. Vesting
+### [5. Vesting](https://github.com/iohkedu/aiken-module/tree/main/examples/vesting)
 The "Vesting" contract is a more practical example. It illustrates how to create a time-locked contract where funds can only be released after a certain time period has passed, or under specific conditions, often involving a beneficiary's signature. This is a common pattern for token distribution or employee compensation.
 #### **Key Learning Points:**
 * Handling time-based conditions (e.g., POSIXTime).
